@@ -15,7 +15,8 @@
 
 <script>
     var applicationConfig = {
-        clientID: '2b9848bc-7372-4092-9273-12cb5a74bedd', //This is your client ID
+        //clientID: '2b9848bc-7372-4092-9273-12cb5a74bedd', //This is your client ID
+        clientID: '50a2a2b4-fd6c-40e2-a76d-366e7b34ec80', // new client id for xanturalogin
         authority: "https://login.microsoftonline.com/common", //Default authority is https://login.microsoftonline.com/common
         graphScopes: ["user.read"],
         graphEndpoint: "https://graph.microsoft.com/v1.0/me"
@@ -29,6 +30,7 @@
             //Login Success
             showWelcomeMessage();
             acquireTokenPopupAndCallMSGraph();
+
         }, function (error) {
             console.log(error);
         });
@@ -101,6 +103,7 @@
         if (myMSALObj.getUser()) {// avoid duplicate code execution on page load in case of iframe and popup window.
             showWelcomeMessage();
             acquireTokenPopupAndCallMSGraph();
+            
         }
     }
     else {
